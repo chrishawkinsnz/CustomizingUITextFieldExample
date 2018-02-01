@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mB6-r6-7LL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Method 1-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Mhp-SB-oJJ" customClass="Method1TextField" customModule="TestTextField" customModuleProvider="target">
+                                <rect key="frame" x="16" y="55" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="GdR-vd-oEc"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNT-BE-4r3">
+                                <rect key="frame" x="16" y="112" width="343" height="446.5"/>
+                                <mutableString key="text">Works with a custom UITextField subclass that dives into it's subviews and looks for a button. When it finds one it changes it to one of with a new colored cross. We do this every time the text field lays out it's subviews as the button is prone to disappear and reappear based on whether there is text in the text field + the field clearButton setting.
+
+
+👍 Don't need to recreate logic of when clear button should show
+
+👎 Fragile, could break if the underlying layout of UITextField changes
+
+👎 Needs to recreate the appearence of the stock UITextField clear button.  Could look out of place in future releases of iOS.
+
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wNT-BE-4r3" secondAttribute="trailing" constant="16" id="DcD-HY-7Vh"/>
+                            <constraint firstItem="Mhp-SB-oJJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="O5C-d5-Ku6"/>
+                            <constraint firstItem="wNT-BE-4r3" firstAttribute="top" secondItem="Mhp-SB-oJJ" secondAttribute="bottom" constant="27" id="da9-OB-Fhg"/>
+                            <constraint firstItem="wNT-BE-4r3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kBJ-q3-WrH"/>
+                            <constraint firstItem="Mhp-SB-oJJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="mq3-MM-JL3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Method 1" badgeValue="Works" id="nMs-Ti-mXh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016.8" y="-889.20539730134942"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Bx2-wt-ZPn">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="mB6-r6-7LL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DSK-kH-I0z">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="JG7-bT-EDk"/>
+                        <segue destination="vae-h8-tXG" kind="relationship" relationship="viewControllers" id="Ia0-6p-zmS"/>
+                        <segue destination="87t-yg-oMr" kind="relationship" relationship="viewControllers" id="Ocw-y9-ywC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0Z-Mb-dhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-47" y="54"/>
+        </scene>
+        <!--Method 2-->
+        <scene sceneID="Nhj-ll-AxP">
+            <objects>
+                <viewController id="vae-h8-tXG" customClass="Method2ViewController" customModule="TestTextField" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wVB-y6-bGa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Onu-Xu-lby" customClass="Method2TextField" customModule="TestTextField" customModuleProvider="target">
+                                <rect key="frame" x="14" y="55" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="3lE-oW-f0d"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxR-d8-3My">
+                                <rect key="frame" x="16" y="112" width="343" height="264"/>
+                                <mutableString key="text">Sets the tint color of buttons contained within a UITextField class. 
+
+
+👍 Could be set globally, no need for a subclass
+
+👍 No need to recreate logic on when to show clear button
+
+👍 No need to recreate appearance of clear button
+
+👎 Doesn't actually work
+
+
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IhN-f8-Khz" firstAttribute="trailing" secondItem="kxR-d8-3My" secondAttribute="trailing" constant="16" id="Imy-Ps-aGQ"/>
+                            <constraint firstItem="kxR-d8-3My" firstAttribute="top" secondItem="Onu-Xu-lby" secondAttribute="bottom" constant="27" id="Nut-c9-eIF"/>
+                            <constraint firstItem="Onu-Xu-lby" firstAttribute="centerX" secondItem="IhN-f8-Khz" secondAttribute="centerX" id="YWd-E3-XjJ"/>
+                            <constraint firstItem="Onu-Xu-lby" firstAttribute="top" secondItem="IhN-f8-Khz" secondAttribute="top" constant="35" id="hk1-nN-VJW"/>
+                            <constraint firstItem="kxR-d8-3My" firstAttribute="leading" secondItem="IhN-f8-Khz" secondAttribute="leading" constant="16" id="lDp-2B-feY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IhN-f8-Khz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Method 2" badgeValue="Broken" id="RXP-my-CXu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apQ-0T-vgO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="-145"/>
+        </scene>
+        <!--Method 3-->
+        <scene sceneID="EYz-W3-cK7">
+            <objects>
+                <viewController id="87t-yg-oMr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aVV-3M-3N1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EVW-p7-HYC" customClass="Method3TextField" customModule="TestTextField" customModuleProvider="target">
+                                <rect key="frame" x="16" y="55" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnG-4s-reH">
+                                <rect key="frame" x="16" y="192" width="343" height="264"/>
+                                <mutableString key="text">Sets a custom right button and attemps to uses it as a replacement for the UITextField clear button behaviour
+
+
+
+👎 Needs to recreate logic of when clear button should show
+
+👎 Needs to recreate appearence of clear button.  Could look out of place in future iOS releases.
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6K-dy-Fs5" customClass="Method3TextField" customModule="TestTextField" customModuleProvider="target">
+                                <rect key="frame" x="16" y="132" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xnG-4s-reH" firstAttribute="leading" secondItem="4FA-Ih-P6l" secondAttribute="leading" constant="16" id="JFG-wn-9Ip"/>
+                            <constraint firstItem="EVW-p7-HYC" firstAttribute="top" secondItem="4FA-Ih-P6l" secondAttribute="top" constant="35" id="NRn-JY-iA7"/>
+                            <constraint firstItem="EVW-p7-HYC" firstAttribute="leading" secondItem="4FA-Ih-P6l" secondAttribute="leading" constant="16" id="aJf-aM-2Pw"/>
+                            <constraint firstItem="4FA-Ih-P6l" firstAttribute="trailing" secondItem="xnG-4s-reH" secondAttribute="trailing" constant="16" id="agh-4M-nYY"/>
+                            <constraint firstItem="xnG-4s-reH" firstAttribute="top" secondItem="P6K-dy-Fs5" secondAttribute="bottom" constant="30" id="d9l-zI-vp3"/>
+                            <constraint firstItem="4FA-Ih-P6l" firstAttribute="trailing" secondItem="EVW-p7-HYC" secondAttribute="trailing" constant="16" id="jYb-Ns-wTC"/>
+                            <constraint firstItem="P6K-dy-Fs5" firstAttribute="top" secondItem="EVW-p7-HYC" secondAttribute="bottom" constant="47" id="pVn-YC-f7z"/>
+                            <constraint firstItem="EVW-p7-HYC" firstAttribute="centerX" secondItem="4FA-Ih-P6l" secondAttribute="centerX" id="pbi-pw-XB2"/>
+                            <constraint firstItem="4FA-Ih-P6l" firstAttribute="trailing" secondItem="P6K-dy-Fs5" secondAttribute="trailing" constant="16" id="vHg-Nq-gKp"/>
+                            <constraint firstItem="P6K-dy-Fs5" firstAttribute="leading" secondItem="4FA-Ih-P6l" secondAttribute="leading" constant="16" id="whG-Os-A5W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4FA-Ih-P6l"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Method 3" badgeValue="Works" id="gHw-S8-oxU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kc2-dn-e5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016.8" y="597.75112443778119"/>
+        </scene>
+    </scenes>
+</document>
